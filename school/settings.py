@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '^%^-l@lm-dk$h=!w(os5p9u(ce+t!@v_-(_w8ww1&)qqwj!1qk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whispering-brook-98746.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
