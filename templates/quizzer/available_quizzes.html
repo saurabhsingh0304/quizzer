@@ -1,0 +1,12 @@
+{% extends 'quizzer/main.html' %}
+
+{% block content %}
+<h3>List of the available quizzes. Click on the quiz title for taking the quiz.</h3>
+{% for quiz in quizzes %}
+<ul>
+    <li>
+        <a href='{% url 'quiz' quiz.id %}'>{{quiz}}</a>
+    </li>
+</ul>
+{% endfor %}
+{% endblock %}
