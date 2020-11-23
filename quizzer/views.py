@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Question, Quiz
 from django.core.paginator import Paginator
 import datetime
+from django.contrib import messages
 from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -21,6 +22,8 @@ def registerpage(request):
             form = CreateUserForm(request.POST)
             if form.is_valid():
                 form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for '+ user)
                 return redirect('login')
         context = {'form': form,}
         return render(request, 'quizzer/registration.html', context)
